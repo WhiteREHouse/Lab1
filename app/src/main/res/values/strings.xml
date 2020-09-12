@@ -1,6 +1,4 @@
 <resources>
     <string name="app_name">Lab1</string>
     <string name="resultString">Result:</string>
-    <string name="divideByZeroWarning">Cannot divide by 0!</string>
-    <string name="numberEmptyWarning">Fill this field</string>
 </resources>
