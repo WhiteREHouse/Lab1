@@ -9,61 +9,135 @@
 
     <EditText
         android:id="@+id/firstNumber"
-        android:layout_width="180dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginRight="8dp"
         android:inputType="numberDecimal|numberSigned"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/secondNumber"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/secondNumber"
-        android:layout_width="180dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginRight="8dp"
         android:inputType="numberDecimal|numberSigned"
+        app:layout_constraintLeft_toRightOf="@id/firstNumber"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/actionPlus"
-        android:layout_width="85dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="20dp"
+        android:layout_marginRight="8dp"
+        android:text="+"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/actionMinus"
         app:layout_constraintTop_toBottomOf="@id/firstNumber" />
 
     <Button
         android:id="@+id/actionMinus"
-        android:layout_width="85dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="20dp"
+        android:layout_marginRight="8dp"
+        android:text="-"
         app:layout_constraintLeft_toRightOf="@id/actionPlus"
+        app:layout_constraintRight_toLeftOf="@+id/actionMultiply"
         app:layout_constraintTop_toBottomOf="@id/firstNumber" />
 
     <Button
         android:id="@+id/actionMultiply"
-        android:layout_width="85dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="20dp"
+        android:layout_marginRight="8dp"
+        android:text="*"
+        app:layout_constraintLeft_toRightOf="@id/actionMinus"
         app:layout_constraintRight_toLeftOf="@id/actionDivide"
         app:layout_constraintTop_toBottomOf="@id/secondNumber" />
 
     <Button
         android:id="@+id/actionDivide"
-        android:layout_width="85dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="8dp"
+        android:text="/"
+        app:layout_constraintLeft_toRightOf="@id/actionMultiply"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/secondNumber" />
+    
+    <TextView
+        android:id="@+id/resultString"
+        android:text="@string/resultString"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="30dp"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/actionPlus"
+        />
+
+    <TextView
+        android:id="@+id/resultOutputWidget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="5dp"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/resultString"
+        android:background="#d4d4d4"
+        />
+
+    <TextView
+        android:id="@+id/divideByZeroWarning"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/divideByZeroWarning"
+        android:textColor="#ff0000"
+        android:textSize="12sp"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="@id/secondNumber"
+        app:layout_constraintRight_toRightOf="@id/secondNumber"
+        app:layout_constraintTop_toBottomOf="@id/secondNumber" />
+
+    <TextView
+        android:id="@+id/firstNumberEmptyWarning"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/numberEmptyWarning"
+        android:textColor="#ff0000"
+        android:textSize="12sp"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="@id/firstNumber"
+        app:layout_constraintRight_toRightOf="@id/firstNumber"
+        app:layout_constraintTop_toBottomOf="@id/firstNumber" />
+
+    <TextView
+        android:id="@+id/secondNumberEmptyWarning"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/numberEmptyWarning"
+        android:textColor="#ff0000"
+        android:textSize="12sp"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="@id/secondNumber"
+        app:layout_constraintRight_toRightOf="@id/secondNumber"
         app:layout_constraintTop_toBottomOf="@id/secondNumber" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
